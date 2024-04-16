@@ -27,7 +27,7 @@ jobs:
         with:
           version: 'v1.0.0' #Optional
           charts_dir: '/charts' #Optional
-          charts_repo_url: 'https://github.com/idokadosh5/helloworld.git' #Optional
+          charts_repo_url: 'https://github.com/idokadosh5/helloworld.git/charts' #Optional
           no_index: false #Optional
           scan: false #Optional
         env:
