@@ -22,27 +22,13 @@ jobs:
       - name: Install Helm
         uses: azure/setup-helm@v1
 
-      - name: Update File
-  # You may pin to the exact commit or the version.
-  # uses: wow-actions/update-file@4e86156f87cbf9c09a6995d310df3e48bc4d1057
-        uses: wow-actions/update-file@v1.2.0
-        with:
-    # Your GitHub token for authentication.
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    # File path to update
-            path: README.md
-    # Content to update the file
-            content: new update
-    # Commit message when update the file
-            commit_message: # optional, default is chore: update [skip ci]
-    # Opening comment
-            opening_comment: # optional, default is <!-- [START AUTO UPDATE] -->
-    # Closing comment
-            closing_comment: # optional, default is <!-- [END AUTO UPDATE] -->
-    # Warning comment
-            warning_comment: # optional, default is <!-- Please keep comment here to allow auto-update -->
-   
       - name: Run chart-releaser
-        uses: helm/chart-releaser-action@v1.2.0
+        uses: helm/chart-releaser-action@v1.0.0
+        with:
+          version: 'v1.0.0' #Optional
+          charts_dir: '/charts' #Optional
+          charts_repo_url: 'https://github.com/idokadosh5/helloworld.git' #Optional
+          no_index: true #Optional
+          scan: false #Optional
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
