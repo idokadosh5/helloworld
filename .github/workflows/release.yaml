@@ -21,6 +21,7 @@ jobs:
           git config user.password "$secrets.GITHUB_TOKEN"
           git clone https://idokadosh5:$secrets.GITHUB_TOKEN@github.com/idokadosh5/helloworld.git
           cd helloworld
+          cat ct.yaml
 
       - name: Install Helm
         uses: azure/setup-helm@v1
