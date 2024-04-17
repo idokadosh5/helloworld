@@ -21,6 +21,11 @@ jobs:
           git config user.password "$secrets.GITHUB_TOKEN"
           git clone https://idokadosh5:$secrets.GITHUB_TOKEN@github.com/idokadosh5/helloworld.git
           cd helloworld
+          touch file
+          echo bla>file
+          git add .
+          git commit -a -m "bla"
+          git push
           cat ct.yaml
 
       - name: Install Helm
